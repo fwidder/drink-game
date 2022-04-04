@@ -1,0 +1,54 @@
+entity Spieler {
+	name String required
+}
+
+entity Spiel {
+	name String required
+}
+
+entity Benutzer {
+	name String required
+}
+
+entity Aufgabe {
+	name String required
+	kurztext String required 
+	beschreibung String required 
+    kategorie Kategorie required
+    level Level required
+}
+
+entity Getraenk {
+	name String required
+    groesse Groesse required
+}
+
+
+enum Kategorie {
+	XXX, FRAGEN, SPORT
+}
+
+enum Level {
+	EASY, MEDIUM, HARD, ULTIMATE
+}
+
+enum Groesse {
+	SHOT, GLAS, BIER
+}
+
+relationship ManyToMany {
+    Spieler to Getraenk
+    Spieler to Aufgabe
+}
+
+relationship ManyToOne {
+	Spieler{spiel required} to Spiel{spieler}
+    Spiel{benutzer required} to Benutzer{spiel}
+}
+
+relationship OneToOne {
+	Benutzer{user required} to User{benutzer}
+}
+
+paginate all with pagination
+service all with serviceImpl

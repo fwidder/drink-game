@@ -1,0 +1,51 @@
+{
+  "applications": "*",
+  "changelogDate": "20220404102812",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "aufgabe",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "kurztext",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "beschreibung",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "kategorie",
+      "fieldType": "Kategorie",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "XXX,FRAGEN,SPORT"
+    },
+    {
+      "fieldName": "level",
+      "fieldType": "Level",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "EASY,MEDIUM,HARD,ULTIMATE"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Aufgabe",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "spieler",
+      "otherEntityRelationshipName": "aufgabe",
+      "ownerSide": false,
+      "relationshipName": "spieler",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

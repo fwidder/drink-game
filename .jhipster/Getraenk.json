@@ -1,0 +1,35 @@
+{
+  "applications": "*",
+  "changelogDate": "20220404102813",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "getraenk",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "groesse",
+      "fieldType": "Groesse",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "SHOT,GLAS,BIER"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Getraenk",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "spieler",
+      "otherEntityRelationshipName": "getraenk",
+      "ownerSide": false,
+      "relationshipName": "spieler",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

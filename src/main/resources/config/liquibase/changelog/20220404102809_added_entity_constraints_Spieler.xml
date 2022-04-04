@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity Spieler.
+    -->
+    <changeSet id="20220404102809-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="spiel_id"
+                                 baseTableName="spieler"
+                                 constraintName="fk_spieler__spiel_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="spiel"/>
+
+        <addForeignKeyConstraint baseColumnNames="spieler_id"
+                                 baseTableName="rel_spieler__getraenk"
+                                 constraintName="fk_rel_spieler__getraenk__spieler_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="spieler"/>
+
+        <addForeignKeyConstraint baseColumnNames="getraenk_id"
+                                 baseTableName="rel_spieler__getraenk"
+                                 constraintName="fk_rel_spieler__getraenk__getraenk_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="getraenk"/>
+
+        <addForeignKeyConstraint baseColumnNames="spieler_id"
+                                 baseTableName="rel_spieler__aufgabe"
+                                 constraintName="fk_rel_spieler__aufgabe__spieler_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="spieler"/>
+
+        <addForeignKeyConstraint baseColumnNames="aufgabe_id"
+                                 baseTableName="rel_spieler__aufgabe"
+                                 constraintName="fk_rel_spieler__aufgabe__aufgabe_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="aufgabe"/>
+    </changeSet>
+</databaseChangeLog>

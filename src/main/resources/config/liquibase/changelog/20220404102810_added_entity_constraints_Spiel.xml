@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity Spiel.
+    -->
+    <changeSet id="20220404102810-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="benutzer_id"
+                                 baseTableName="spiel"
+                                 constraintName="fk_spiel__benutzer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="benutzer"/>
+    </changeSet>
+</databaseChangeLog>

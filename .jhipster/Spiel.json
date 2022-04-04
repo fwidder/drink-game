@@ -1,0 +1,35 @@
+{
+  "applications": "*",
+  "changelogDate": "20220404102810",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "spiel",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Spiel",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "benutzer",
+      "otherEntityRelationshipName": "spiel",
+      "relationshipName": "benutzer",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "spieler",
+      "otherEntityRelationshipName": "spiel",
+      "relationshipName": "spieler",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}
